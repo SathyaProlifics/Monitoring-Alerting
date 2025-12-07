@@ -137,7 +137,7 @@ route:
 receivers:
   - name: pagerduty
     pagerduty_configs:
-      - routing_key: "4bf6bcd8cb9b4607d047c4b6c2d333d6" #add key pagerduty 
+      - routing_key: "c4e24e051dcd420bc0716f467fa3dbe4" #add key pagerduty 
         severity: "critical"
 EOF
 
@@ -185,7 +185,7 @@ alerting:
           port: 9093
           filters:
             - name: "tag:Name"
-              values: ["node-server"]
+              values: ["MyServer1"]
       relabel_configs:
         - source_labels: [__meta_ec2_private_ip]
           regex: (.*)
@@ -206,7 +206,7 @@ scrape_configs:
         port: 9100
         filters:
           - name: "tag:Name"
-            values: ["node-server"]
+            values: ["MyServer1"]
     relabel_configs:
       - source_labels: [__meta_ec2_private_ip]
         regex: (.*)
